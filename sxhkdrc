@@ -10,10 +10,9 @@ super + Return
 super + @space
 	rofi -show run
 
-
 # run vscode
 ctrl + 1
-	emacs
+	flameshot gui
 
 # run firefox
 ctrl + 2
@@ -21,18 +20,6 @@ ctrl + 2
 
 ctrl + 3
 	/usr/bin/discord
-
-ctrl + 6
-  brave https://pixlr.com/x/
-
-ctrl + 7 
-  vivaldi-stable https://www.youtube.com/watch?v=gFDCHdKbKBY
-
-ctrl + 8 
-	vlc -f ~/Videos/K_DA\ -\ MORE\ ft.\ Madison\ Beer\,\ \(G\)I-DLE\,\ Lexie\ Liu\,\ Jaira\ Burns\,\ Seraphine\ \(Official\ Music\ Video\)-3VTkBuxU4yk.webm
-
-ctrl + 9
-	vlc -f ~/Videos/RED\ RIOT\ UNBREAKABLE\ \[Trap\ Remix\]-UGK59EXVXgU.webm
 
 # make sxhkd reload its configuration files:
 super + Escape
