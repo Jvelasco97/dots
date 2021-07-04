@@ -22,10 +22,15 @@ export PATH=$PATH:/home/xerothyl/.cargo/bin
 # ENV
 export VISUAL=nvim;
 export EDITOR=nvim;
-export TERM="xterm"
+export TERM="xterm-256color"
+# export TERM="xterm"
 
 # Case insensitive completion
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)		# Include hidden files.
 
 # Organize completions by categories
 zstyle ':completion:*:functions' ignored-patterns '_*'
@@ -71,11 +76,11 @@ alias sp='sudo pacman -Syu'
 alias vyxz="ssh xerothyl@vyxz.xyz -p 1304"
 alias fsvyxz='sshfs xerothyl@vyxz.xyz:/var/www/vyxz/ ~/vyxz -p 1304'
 alias update="sudo pacman -Syu && paru -Syu"
-alias tmux="TERM=screen-256color-bce tmux"
-alias zellij="zellij --layout ~/.config/zellij/config.yaml"
+# alias tmux="TERM=screen-256color-bce tmux"
+# alias zellij="zellij --layout ~/.config/zellij/config.yaml"
 alias RAC='cd ~/projects/RAC-Backend'
 
-PS1='[\u@\h \W]\$ '
+# PS1='[\u@\h \W]\$ '
 
 eval "$(starship init zsh)"
 ~/.local/bin/fetching -r

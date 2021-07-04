@@ -22,7 +22,7 @@ ctrl + 3
 	/usr/bin/discord
 
 ctrl + 4
-        ckb-next && lxappearance
+        ckb-next || lxappearance
 
 # make sxhkd reload its configuration files:
 super + Escape
