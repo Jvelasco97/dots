@@ -59,8 +59,10 @@ alias ls='/opt/coreutils/bin/ls --color=auto'
 # alias ls='ls --color=auto'
 alias l='/opt/coreutils/bin/ls --color=auto -lh'
 # alias l='ls --color=auto -lh'
-alias l='/opt/coreutils/bin/ls --color=auto -lha'
+alias la='/opt/coreutils/bin/ls --color=auto -lha'
 # alias la='ls --color=auto -lha'
+
+# wc -l **/*.rs -- gets all the lines in directory
 
 alias neo='neofetch --config ~/.config/neofetch/config.conf --crop_mode fit --w3m Pictures/2.jpg'
 alias n='nvim'
