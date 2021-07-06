@@ -66,9 +66,13 @@ alias l='/opt/coreutils/bin/ls --color=auto -lh'
 # alias l='ls --color=auto -lh'
 alias la='/opt/coreutils/bin/ls --color=auto -lha'
 # alias la='ls --color=auto -lha'
+alias feh='feh --scale-down --auto-zoom'
 
 # wc -l **/*.rs -- gets all the lines in directory
 
+cl() { builtin cd "$@" && /opt/coreutils/bin/ls -a; }
+
+alias screenkey='screenkey -g 20%x45%+40%+50%'
 alias neo='neofetch --config ~/.config/neofetch/config.conf --crop_mode fit --w3m Pictures/2.jpg'
 alias n='nvim'
 alias sn='sudo nvim'
