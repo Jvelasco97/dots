@@ -19,6 +19,7 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:/home/xerothyl/.cargo/bin
 
+
 # ENV
 export VISUAL=nvim;
 export EDITOR=nvim;
@@ -67,12 +68,13 @@ alias l='/opt/coreutils/bin/ls --color=auto -lh'
 alias la='/opt/coreutils/bin/ls --color=auto -lha'
 # alias la='ls --color=auto -lha'
 alias feh='feh --scale-down --auto-zoom'
-
+alias tmux='tmux -f ~/.tmux-conf'
 # wc -l **/*.rs -- gets all the lines in directory
 
 cl() { builtin cd "$@" && /opt/coreutils/bin/ls -a; }
 
 alias screenkey='screenkey -g 20%x45%+40%+50%'
+alias record='ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -c:v libx264 -preset ultrafast -c:a aac screen.mp4'
 alias neo='neofetch --config ~/.config/neofetch/config.conf --crop_mode fit --w3m Pictures/2.jpg'
 alias n='nvim'
 alias sn='sudo nvim'
@@ -80,9 +82,10 @@ alias sp='sudo pacman -Syu'
 alias vyxz="ssh xerothyl@vyxz.xyz -p 1304"
 alias fsvyxz='sshfs xerothyl@vyxz.xyz:/var/www/vyxz/ ~/vyxz -p 1304'
 alias update="sudo pacman -Syu && paru -Syu"
-# alias tmux="TERM=screen-256color-bce tmux"
-# alias zellij="zellij --layout ~/.config/zellij/config.yaml"
+alias s="spotifyC"
 alias RAC='cd ~/projects/RAC-Backend'
+
+alias battery='< /sys/class/power_supply/BAT0/capacity'
 
 # PS1='[\u@\h \W]\$ '
 
