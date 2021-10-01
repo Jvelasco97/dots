@@ -23,7 +23,7 @@ export PATH=$PATH:/home/xerothyl/.cargo/bin
 # ENV
 export VISUAL=nvim;
 export EDITOR=nvim;
-export TERM="xterm-256color"
+# export TERM="xterm-256color"
 # export TERM="xterm"
 
 # Case insensitive completion
@@ -54,7 +54,7 @@ setopt hist_save_no_dups
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # custom color for the auto suggestion
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,bg=#111,bold,underline"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7A8D9E"
 
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'

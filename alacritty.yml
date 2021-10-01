@@ -53,7 +53,7 @@ colors:
     white:   '#FFFAFA'
 
 # you need picom installed
-background_opacity: .80
+background_opacity: .50
 window:
   padding:
     x: 10
