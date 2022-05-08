@@ -8,6 +8,7 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 # merge in defaults and keymaps
 
 if [ -f $sysresources ]; then
+
     xrdb -merge $sysresources
 
 fi
@@ -17,7 +18,9 @@ if [ -f $sysmodmap ]; then
 fi
 
 if [ -f "$userresources" ]; then
+
     xrdb -merge "$userresources"
+
 fi
 
 if [ -f "$usermodmap" ]; then
@@ -34,9 +37,21 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 sxhkd -c ~/.config/sxhkd/sxhkdrc &
-#xrandr --output DP-1 --primary &
-xrandr --output eDP-1 --off &
-feh --bg-scale Pictures/2.jpg &
-~/.config/polybar/launch.sh --blocks &
-redshift -l 41.920318:-89.06382 &
-exec bspwm -c ~/.config/bspwm/bspwmrc 
+
+if [[ $(xrandr | grep '^DP1 connected') ]]; then
+		xrandr --output eDP1 --off &
+fi
+
+feh --bg-scale downloads/wallhaven-dpddwl.jpg &
+/usr/bin/emacs --daemon &
+pipewire &
+picom &
+~/.config/polybar/murz/launch.sh
+/usr/bin/pipewire -c /home/xerothyl/.config/pipewire/input-filter-chain.conf &
+
+if [[ "$(tty)" = "/dev/tty2" ]];
+  then
+			exec i3
+	else
+		exec bspwm -c ~/.config/bspwm/bspwmrc
+fi
