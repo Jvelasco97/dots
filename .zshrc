@@ -1,3 +1,6 @@
+# set vi mode
+set -o vi
+
 #set history size
 export HISTSIZE=10000
 #save history after logout
@@ -25,15 +28,14 @@ export XDG_STATE_HOME="${HOME}/.local/state"
 # ENV
 export VISUAL=nvim;
 export EDITOR=nvim;
-# export TERM="xterm-256color"
-# export TERM="xterm"
+export TERM="xterm-256color"
 
 # Case insensitive completion
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit
-_comp_options+=(globdots)		# Include hidden files.
+# compinit
+# _comp_options+=(globdots)		# Include hidden files.
 
 # Ignore duplicate history
 setopt hist_ignore_all_dups
@@ -66,11 +68,12 @@ alias fsvyxz='sshfs xerothyl@vyxz.xyz:/var/www/vyxz/ ~/vyxz -p 1304'
 alias update="sudo pacman -Syu && paru -Syu"
 alias s="spotifyC"
 alias RAC='cd ~/projects/RAC-Backend'
-alias ls="/opt/coreutils/bin/ls --color=auto"
+# alias ls="/opt/coreutils/bin/ls --color=auto"
+alias ls='/opt/coreutils/bin/ls -a --color=auto'
 
 alias battery='< /sys/class/power_supply/BAT0/capacity'
 
 # PS1='[\u@\h \W]\$ '
 
-colorscript -r
+# colorscript -r
 eval "$(starship init zsh)"

@@ -38,16 +38,18 @@ fi
 
 sxhkd -c ~/.config/sxhkd/sxhkdrc &
 
-if [[ $(xrandr | grep '^DP1 connected') ]]; then
-		xrandr --output eDP1 --off &
+if [[ $(xrandr | grep '^DP-1 connected') ]]; then
+		xrandr --output eDP-1 --off &
 fi
 
-feh --bg-scale downloads/wallhaven-dpddwl.jpg &
+feh --bg-scale downloads/wallhaven-1km5dg.jpg &
 /usr/bin/emacs --daemon &
 pipewire &
-picom &
-~/.config/polybar/murz/launch.sh
-/usr/bin/pipewire -c /home/xerothyl/.config/pipewire/input-filter-chain.conf &
+pipewire-pulse &
+wireplumber &
+# picom &
+sudo ckb-next-daemon &
+~/.config/polybar/polybar-collection/launch.sh
 
 if [[ "$(tty)" = "/dev/tty2" ]];
   then

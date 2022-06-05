@@ -37,11 +37,16 @@ super + ctrl + p
 # volume control
 
 super + ctrl + u
-  amixer set Master 5%+
+  pactl set-sink-volume 0 +15%
 
 super + ctrl + d
-  amixer set Master 5%-
+  pactl set-sink-volume 0 -15%
 
+super + ctrl + alt + p
+  sudo poweroff
+
+super + ctrl + alt + r
+  sudo reboot
 #
 # spotify shortcuts
 #
